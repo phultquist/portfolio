@@ -18,41 +18,18 @@ export const query = graphql`
       description
       keywords
     }
-    projects: allSanitySampleProject(
+    projects: allSanityProject(
       limit: 6
-      sort: { fields: [publishedAt], order: DESC }
-      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
+      sort: { fields: [startDate], order: DESC }
     ) {
       edges {
         node {
           id
-          mainImage {
-            crop {
-              _key
-              _type
-              top
-              bottom
-              left
-              right
-            }
-            hotspot {
-              _key
-              _type
-              x
-              y
-              height
-              width
-            }
-            asset {
-              _id
-            }
-            alt
-          }
           title
-          _rawExcerpt
-          slug {
-            current
-          }
+          description
+          startDate
+          endDate
+          slug
         }
       }
     }
@@ -61,6 +38,8 @@ export const query = graphql`
 
 const IndexPage = props => {
   const { data, errors } = props;
+
+  console.log(data);
 
   if (errors) {
     return (
@@ -71,11 +50,14 @@ const IndexPage = props => {
   }
 
   const site = (data || {}).site;
+
   const projectNodes = (data || {}).projects
     ? mapEdgesToNodes(data.projects)
         .filter(filterOutDocsWithoutSlugs)
         .filter(filterOutDocsPublishedInTheFuture)
     : [];
+
+    console.log(data.projects);
 
   if (!site) {
     throw new Error(
