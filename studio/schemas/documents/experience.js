@@ -13,9 +13,15 @@ export default {
             ]
         },
         {
+            name: 'company',
+            title: 'Company',
+            type: 'string'
+        },
+        {
             name: 'startDate',
             title: 'Started on',
-            type: 'date'
+            type: 'date',
+            validation: Rule => Rule.required()
         },
         {
             name: 'endDate',

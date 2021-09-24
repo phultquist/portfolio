@@ -15,7 +15,8 @@ export default {
         {
             name: 'startDate',
             title: 'Started on',
-            type: 'date'
+            type: 'date',
+            validation: Rule => Rule.required()
         },
         {
             name: 'endDate',
@@ -31,6 +32,12 @@ export default {
             name: 'slug',
             title: 'Slug',
             type: 'slug'
+        },
+        {
+            name: 'urls',
+            title: 'Related URLs',
+            type: 'array',
+            of: [{type: 'url'}]
         }
     ]
 }
