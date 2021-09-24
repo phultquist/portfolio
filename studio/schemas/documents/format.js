@@ -1,7 +1,7 @@
 export default {
-  name: 'method',
+  name: 'format',
   type: 'document',
-  title: 'Method',
+  title: 'Format',
   fields: [
     {
       name: 'title',
@@ -13,11 +13,5 @@ export default {
       type: 'text',
       title: 'Description'
     }
-  ],
-  preview: {
-    select: {
-      title: 'Method of Viewing',
-      subtitle: 'A place where items will be seen, like resume or online portfolio'
-    }
-  }
+  ]
 }

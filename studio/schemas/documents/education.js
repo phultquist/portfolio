@@ -1,7 +1,7 @@
 export default {
-  name: 'experience',
+  name: 'education',
   type: 'document',
-  title: 'Experiences',
+  title: 'Education',
   fields: [
     {
       name: 'title',
@@ -24,33 +24,15 @@ export default {
       type: 'date'
     },
     {
-      name: 'company',
-      title: 'Company',
+      name: 'school',
+      title: 'School',
       type: 'string',
-      validation: Rule => Rule.required().error('A company is required')
+      validation: Rule => Rule.required().error('A school is required')
     },
     {
       name: 'description',
       title: 'Description',
       type: 'text'
-    },
-    {
-      name: 'body',
-      title: 'Body',
-      type: 'array',
-      of: [
-        {
-          type: 'block',
-          styles: [
-            { title: 'Normal', value: 'normal' },
-            { title: 'H1', value: 'h1' },
-            { title: 'H2', value: 'h2' },
-            { title: 'H3', value: 'h3' },
-            { title: 'H4', value: 'h4' },
-            { title: 'Quote', value: 'blockquote' }
-          ]
-        }
-      ]
     },
     {
       name: 'slug',
