@@ -1,0 +1,44 @@
+.intro {
+  min-height: 100vh;
+  padding: 0 2rem;
+  display: flex; 
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  width: 100vw;
+  height: 100vh;
+}
+
+.main {
+  /* padding: 5rem 0; */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 5rem;
+  font-family: 'Inter', sans-serif;
+  text-align: left;
+}
+
+.socials {
+  display: flex;
+  justify-content: flex-start;
+  opacity: 0.8;
+}
+
+.proudWork {
+  background-color: #eee;
+}
+
+@media (max-width: 600px) {
+  .grid {
+    width: 100%;
+    flex-direction: column;
+  }
+}
