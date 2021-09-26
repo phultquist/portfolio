@@ -55,7 +55,8 @@ export default {
     {
       name: 'slug',
       title: 'Slug',
-      type: 'slug'
+      type: 'slug',
+      validation: Rule => Rule.required()
     },
     {
       name: 'urls',
