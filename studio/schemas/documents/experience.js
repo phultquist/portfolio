@@ -32,7 +32,7 @@ export default {
     {
       name: 'description',
       title: 'Description',
-      type: 'text'
+      type: 'string'
     },
     {
       name: 'body',
