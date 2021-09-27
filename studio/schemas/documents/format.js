@@ -25,6 +25,36 @@ export default {
           .replace(/\s+/g, '-')
           .slice(0, 200)
       }
+    },
+    {
+      name: 'educations',
+      title: 'Education',
+      description: 'What education should appear',
+      type: 'array',
+      of: [{
+        type: 'reference',
+        to: [{ type: 'education' }]
+      }]
+    },
+    {
+      name: 'projects',
+      title: 'Projects',
+      description: 'What projects should appear',
+      type: 'array',
+      of: [{
+        type: 'reference',
+        to: [{ type: 'project' }]
+      }]
+    },
+    {
+      name: 'experiences',
+      title: 'Experiences',
+      description: 'What experiences should appear',
+      type: 'array',
+      of: [{
+        type: 'reference',
+        to: [{ type: 'experience' }]
+      }]
     }
   ]
 }

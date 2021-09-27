@@ -63,16 +63,6 @@ export default {
       title: 'Images',
       type: 'array',
       of: [{ type: 'image' }]
-    },
-    {
-      name: 'formats',
-      title: 'Formats',
-      description: 'Where the project should appear',
-      type: 'array',
-      of: [{
-        type: 'reference',
-        to: [{ type: 'format' }]
-      }]
     }
   ]
 }

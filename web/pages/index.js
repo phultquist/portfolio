@@ -8,9 +8,7 @@ import memoji from '../public/memoji.png'
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
 
-export default function Home({ metadata, projects }) {
-  const proudProjects = projects.filter(project => project.formats?.some(format => format.slug.current === 'proud-work'));
-  // const proudProjects = projects.filter(project => project.formats.some(f => f.slug.current === 'proud-work'));
+export default function Home({ metadata, proudProjects }) {
   return (
     <div>
       <div className={styles.intro}>
@@ -99,14 +97,10 @@ export async function getStaticProps() {
             username
           }
         }
-        allProject {
-          title
-          description
-          slug {
-            current
-          }
-          formats {
+        allFormat(where: { slug: { current: { eq: "proud-work" } } }) {
+          projects {
             title
+            description
             slug {
               current
             }
@@ -119,7 +113,7 @@ export async function getStaticProps() {
   return {
     props: {
       metadata: data.allMeta[0],
-      projects: data.allProject,
+      proudProjects: data.allFormat[0].projects,
     },
   };
 }
