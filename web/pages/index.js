@@ -8,7 +8,7 @@ import memoji from '../public/memoji.png'
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
 
-export default function Home({ metadata, proudProjects }) {
+export default function Home({ metadata, proudProjects, portfolioProjects }) {
   return (
     <div>
       <div className={styles.intro}>
@@ -51,8 +51,7 @@ export default function Home({ metadata, proudProjects }) {
 
           </div>
           <p>
-            {JSON.stringify(projects, null, 2)}<br /><br />
-            {JSON.stringify(projects.map(p => p.formats), null, 2)}<br />
+            {JSON.stringify(proudProjects, null, 2)}<br /><br />
 
           </p>
         </div>
@@ -63,7 +62,7 @@ export default function Home({ metadata, proudProjects }) {
             Other projects
           </h1>
           <div className="flex flex-wrap -mx-3">
-            {proudProjects.map((project, i) => (
+            {portfolioProjects.map((project, i) => (
               <div key={i} className="my-6 px-6 w-full md:w-1/2 lg:w-1/2 xl:w-1/2">
                 <h3 className="font-medium text-lg">{project.title}</h3>
                 <p className="text-sm">
@@ -97,7 +96,10 @@ export async function getStaticProps() {
             username
           }
         }
-        allFormat(where: { slug: { current: { eq: "proud-work" } } }) {
+        allFormat {
+          slug {
+            current
+          }
           projects {
             title
             description
@@ -109,11 +111,15 @@ export async function getStaticProps() {
       }
     `,
   });
-
+console.log(data.allFormat[0]);
+console.log(data.allFormat[1]);
+console.log(data.allFormat[2]);
   return {
     props: {
       metadata: data.allMeta[0],
-      proudProjects: data.allFormat[0].projects,
+      proudProjects: data.allFormat.find(f => f.slug?.current == "proud-work").projects,
+      resumeProjects: data.allFormat.find(f => f.slug?.current == "resume").projects,
+      portfolioProjects: data.allFormat.find(f => f.slug?.current == "portfolio")?.projects,
     },
   };
 }
