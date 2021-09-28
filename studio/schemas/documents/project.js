@@ -29,6 +29,11 @@ export default {
       type: 'string'
     },
     {
+      name: 'showProjectPage',
+      title: 'Show Project Page',
+      type: 'boolean'
+    },
+    {
       name: 'body',
       title: 'Body',
       type: 'array',

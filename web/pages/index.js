@@ -44,7 +44,7 @@ export default function Home({ metadata, proudProjects, portfolioProjects }) {
           </h1>
           <div className="flex flex-wrap -mx-3">
             {proudProjects.map((project, i) => {
-              const image = project.images ? project.images[0].asset.url : "test"
+              const image = project.images ? project.images[0].asset.url : ""
               return (
                 <Card href={'/project/' + project.slug?.current} key={i} src={image}>
                   <h3 className="font-medium text-lg">{project.title}</h3>
