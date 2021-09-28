@@ -1,6 +1,7 @@
 import Navbar from '../../components/Navbar'
 import Footer from '../../components/Footer'
 import Icon from '../../components/Icon'
+import Site from '../../components/Site'
 
 export default function Component() {
     return (<>
@@ -9,7 +10,10 @@ export default function Component() {
             <div className="max-w-screen-lg mx-auto py-10 px-10">
                 <div className="flex space-x-10">
                     <h1 className="font-medium text-2xl mb-4">Project Title</h1>
-                    <Icon className="pb-4" glyph={"github"} href={"GITHUB METADATA"}/>
+                    <div className="flex space-x-1">
+                        <Icon className="pb-4" glyph={"github"} href={"GITHUB METADATA"} />
+                        <Icon className="pb-4" glyph={"web"} href={"GITHUB METADATA"} />
+                    </div>
                 </div>
                 <div className="flex">
                     <div className="flex-grow">
@@ -22,6 +26,9 @@ export default function Component() {
                         <a>GitHub</a> <br />
                         <a>Website</a>
                     </div> */}
+                </div>
+                <div className="">
+                    <Site url={"https://fr.wikipedia.org/wiki/Main_Page"} />
                 </div>
             </div>
         </div>
