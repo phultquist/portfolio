@@ -8,12 +8,14 @@ import Image from 'next/image'
 
 import { gql } from "@apollo/client";
 import client from "../../apollo-client";
+import BlockContent from "@sanity/block-content-to-react"
 
 import metadataQuery from '../../queries/metadata'
 
 export default function Component({ project, metadata }) {
     const [modalShown, setModalShown] = React.useState(false);
     const [modalImage, setModalImage] = React.useState(null);
+
     return (<>
         {modalShown ? <div className="modal">
             <div className="modal-background fixed w-screen h-screen z-50" onClick={() => setModalShown(false)}>
@@ -40,7 +42,7 @@ export default function Component({ project, metadata }) {
                 <div className="flex">
                     <div className="flex-grow">
                         <p>
-                            {project.description}
+                            {project.bodyRaw ? <BlockContent blocks={project.bodyRaw} /> : project.description}
                         </p>
                     </div>
                     {/* <div className="flex-none min-w-min w-40 bg-red-400 text-right">
@@ -65,7 +67,7 @@ export default function Component({ project, metadata }) {
                 </div>
             </div>
         </div>
-        <Footer background="white" metadata={metadata}/>
+        <Footer background="white" metadata={metadata} />
     </>)
 }
 
@@ -78,6 +80,7 @@ export async function getServerSideProps({ params }) {
                 title
                 description
                 urls
+                bodyRaw
                 startDate
                 endDate
                 metadata {
