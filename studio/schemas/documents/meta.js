@@ -50,11 +50,6 @@ export default {
       type: 'string'
     },
     {
-      name: 'dob',
-      title: 'Date of birth',
-      type: 'date'
-    },
-    {
       name: 'skills',
       type: 'array',
       title: 'Skills',
