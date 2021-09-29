@@ -11,6 +11,8 @@ import Footer from '../components/Footer'
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
 
+import metadataQuery from '../queries/metadata'
+
 export default function Home({ metadata, proudProjects, portfolioProjects }) {
   return (
     <div>
@@ -64,7 +66,7 @@ export default function Home({ metadata, proudProjects, portfolioProjects }) {
           <h1 className={"text-2xl mb-4 font-medium"}>
             About me
           </h1>
-          <p>I'm a first year etc. make sure to put this in sanity</p>
+          <p>{metadata.bio}</p>
         </div>
         *iamges of me*
       </div>
@@ -90,7 +92,7 @@ export default function Home({ metadata, proudProjects, portfolioProjects }) {
           </div>
         </div>
       </div>
-      <Footer background="white"/>
+      <Footer background="white" metadata={metadata}/>
     </div>
   )
 }
@@ -99,21 +101,7 @@ export async function getStaticProps() {
   const { data } = await client.query({
     query: gql`
       query {
-        allMeta {
-          twitter {
-            url
-            username
-          }
-          github {
-            url
-            username
-          }
-          linkedin {
-            url
-            username
-          }
-          email
-        }
+        ${metadataQuery}
         allFormat {
           slug {
             current

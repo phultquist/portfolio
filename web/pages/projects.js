@@ -4,7 +4,9 @@ import Footer from "../components/Footer"
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
 
-export default function Component({ proudProjects, portfolioProjects }) {
+import metadataQuery from "../queries/metadata"
+
+export default function Component({ proudProjects, portfolioProjects, metadata }) {
     return (
         <div>
             <Navbar />
@@ -48,7 +50,7 @@ export default function Component({ proudProjects, portfolioProjects }) {
                     </div>
                 </div>
             </div>
-            <Footer />
+            <Footer metadata={metadata}/>
         </div>
     )
 }
@@ -57,6 +59,7 @@ export async function getStaticProps() {
     const { data } = await client.query({
         query: gql`
         query {
+          ${metadataQuery}
           allFormat {
             slug {
               current
@@ -81,6 +84,7 @@ export async function getStaticProps() {
         props: {
             proudProjects: data.allFormat.find(f => f.slug?.current == "proud-work").projects,
             portfolioProjects: data.allFormat.find(f => f.slug?.current == "portfolio")?.projects,
+            metadata: data.allMeta[0]
         },
     };
 }

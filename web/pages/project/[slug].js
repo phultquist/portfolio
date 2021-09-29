@@ -4,13 +4,14 @@ import Icon from '../../components/Icon'
 import Site from '../../components/Site'
 
 import React from 'react'
-
 import Image from 'next/image'
 
 import { gql } from "@apollo/client";
 import client from "../../apollo-client";
 
-export default function Component({ project }) {
+import metadataQuery from '../../queries/metadata'
+
+export default function Component({ project, metadata }) {
     const [modalShown, setModalShown] = React.useState(false);
     const [modalImage, setModalImage] = React.useState(null);
     return (<>
@@ -49,8 +50,7 @@ export default function Component({ project }) {
                     </div> */}
                 </div>
                 <div className="mt-10">
-                    {/* <Site url={"https://fr.wikipedia.org/wiki/Main_Page"} /> */}
-                    {project.site ? <Site url={project.urls[0]} /> : null}
+                    {project.metadata?.website ? <Site url={project.metadata.website} /> : null}
                 </div>
                 <div className="flex flex-wrap justify-between">
                     {project.images.length > 1 ? project.images.map(image => {
@@ -65,7 +65,7 @@ export default function Component({ project }) {
                 </div>
             </div>
         </div>
-        <Footer background="white" />
+        <Footer background="white" metadata={metadata}/>
     </>)
 }
 
@@ -73,13 +73,16 @@ export async function getServerSideProps({ params }) {
     const { data } = await client.query({
         query: gql`
         query {
+            ${metadataQuery}
             allProject(where: { slug: { current: { eq: "${params.slug}" } } } ) {
                 title
                 description
                 urls
                 startDate
                 endDate
-                site
+                metadata {
+                    website
+                }
                 images {
                     asset {
                         url
@@ -101,7 +104,8 @@ export async function getServerSideProps({ params }) {
 
     return {
         props: {
-            project: data.allProject[0]
+            project: data.allProject[0],
+            metadata: data.allMeta[0]
         },
     };
 }
