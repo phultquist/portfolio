@@ -14,6 +14,7 @@ import experience from './documents/experience'
 import meta from './documents/meta'
 
 // Object types
+import metadata from './objects/metadata'
 import account from './objects/account'
 
 // Then we give our schema to the builder and provide the result to Sanity
@@ -26,6 +27,7 @@ export default createSchema({
     // When added to this list, object types can be used as
     // { type: 'typename' } in other document schemas
     account,
+    metadata,
     // The following are document types which will appear
     // in the studio.
     category,

@@ -59,6 +59,11 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      name: 'metadata',
+      title: 'Experience Project Metadata',
+      type: 'metadata'
+    },
+    {
       name: 'urls',
       title: 'Related URLs',
       type: 'array',

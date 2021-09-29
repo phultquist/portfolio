@@ -58,9 +58,9 @@ export default {
       validation: Rule => Rule.required()
     },
     {
-      name: 'site',
-      title: 'Site',
-      type: 'url'
+      name: 'metadata',
+      title: 'Project Metadata',
+      type: 'metadata'
     },
     {
       name: 'urls',
