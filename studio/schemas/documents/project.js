@@ -58,6 +58,11 @@ export default {
       validation: Rule => Rule.required()
     },
     {
+      name: 'site',
+      title: 'Site',
+      type: 'url'
+    },
+    {
       name: 'urls',
       title: 'Related URLs',
       type: 'array',
