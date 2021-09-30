@@ -36,14 +36,14 @@ export default function Home({ metadata, proudProjects, portfolioProjects }) {
           </div>
         </main>
         <div className={"absolute bottom-0 right-0"}>
-          <Image src={memoji} />
+          <Image src={memoji} alt="Image of me"/>
         </div>
       </div>
       <div className="bg-gray-200">
         <div className={"max-w-screen-lg mx-auto py-10 px-10"}>
-          <h1 className={"text-2xl mb-4 font-medium"}>
+          <h2 className={"text-2xl mb-4 font-medium"}>
             Work I'm proud of
-          </h1>
+          </h2>
           <div className="flex flex-wrap -mx-3">
             {proudProjects.map((project, i) => {
               const image = project.images ? project.images[0].asset.url : ""
@@ -63,18 +63,18 @@ export default function Home({ metadata, proudProjects, portfolioProjects }) {
       </div>
       <div>
         <div className={"max-w-screen-lg mx-auto py-10 px-10"}>
-          <h1 className={"text-2xl mb-4 font-medium"}>
+          <h2 className={"text-2xl mb-4 font-medium"}>
             About me
-          </h1>
+          </h2>
           <p>{metadata.bio}</p>
         </div>
         {/* *images of me* */}
       </div>
       <div className="bg-gray-200">
         <div className={"max-w-screen-lg mx-auto py-10 px-10"}>
-          <h1 className={"text-2xl mb-4 font-medium"}>
+          <h2 className={"text-2xl mb-4 font-medium"}>
             Other highlights
-          </h1>
+          </h2>
           <div className="flex flex-wrap -mx-3">
             {portfolioProjects.map((project, i) => (
               <div key={i} className="my-6 px-6 w-full md:w-1/2 lg:w-1/2 xl:w-1/2">

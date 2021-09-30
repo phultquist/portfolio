@@ -56,7 +56,7 @@ export default function Component({ project, metadata }) {
                             setModalImage(image);
                             setModalShown(true);
                         }} className={"w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-2 py-2 md:p-6 scale-102 cursor-pointer"}>
-                            <Image className="object-cover rounded" loader={() => src} src={src} width={500} height={500} />
+                            <Image className="object-cover rounded" loader={() => src} src={src} width={500} height={500} alt="Project image"/>
                         </div>)
                     }) : null}
                 </div>
