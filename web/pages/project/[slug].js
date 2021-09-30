@@ -35,8 +35,8 @@ export default function Component({ project, metadata }) {
                 <div className="flex space-x-10">
                     <h1 className="font-medium text-2xl mb-4">{project.title}</h1>
                     <div className="flex space-x-1">
-                        <Icon className="pb-4" glyph={"github"} href={"GITHUB METADATA"} />
-                        <Icon className="pb-4" glyph={"web"} href={"GITHUB METADATA"} />
+                        {project.metadata?.github ? <Icon className="pb-4" glyph={"github"} href={project.metadata.github}/> : null}
+                        {project.metadata?.website ? <Icon className="pb-4" glyph={"web"} href={project.metadata.website} />: null}
                     </div>
                 </div>
                 <div className="flex">
@@ -45,17 +45,12 @@ export default function Component({ project, metadata }) {
                             {project.bodyRaw ? <BlockContent blocks={project.bodyRaw} /> : project.description}
                         </p>
                     </div>
-                    {/* <div className="flex-none min-w-min w-40 bg-red-400 text-right">
-                        <h2 className="text-md font-medium">Resources</h2>
-                        <a>GitHub</a> <br />
-                        <a>Website</a>
-                    </div> */}
                 </div>
                 <div className="mt-10">
                     {project.metadata?.website ? <Site url={project.metadata.website} /> : null}
                 </div>
                 <div className="flex flex-wrap justify-between">
-                    {project.images.length > 1 ? project.images.map(image => {
+                    {project.images?.length > 1 ? project.images.map(image => {
                         const src = image.asset.url;
                         return (<div onClick={() => {
                             setModalImage(image);

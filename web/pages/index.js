@@ -92,7 +92,7 @@ export default function Home({ metadata, proudProjects, portfolioProjects }) {
           </div>
         </div>
       </div>
-      <Footer background="white" metadata={metadata}/>
+      <Footer background="white" metadata={metadata} />
     </div>
   )
 }
@@ -127,7 +127,7 @@ export async function getStaticProps() {
       metadata: data.allMeta[0],
       proudProjects: data.allFormat.find(f => f.slug?.current == "proud-work").projects,
       resumeProjects: data.allFormat.find(f => f.slug?.current == "resume").projects,
-      portfolioProjects: data.allFormat.find(f => f.slug?.current == "portfolio")?.projects.slice(0, 8),
-    },
+      portfolioProjects: data.allFormat.find(f => f.slug?.current == "portfolio")?.projects.slice(0, 4),
+    }
   };
 }
