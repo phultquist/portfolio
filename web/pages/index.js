@@ -68,7 +68,7 @@ export default function Home({ metadata, proudProjects, portfolioProjects }) {
           </h1>
           <p>{metadata.bio}</p>
         </div>
-        *iamges of me*
+        {/* *images of me* */}
       </div>
       <div className="bg-gray-200">
         <div className={"max-w-screen-lg mx-auto py-10 px-10"}>
