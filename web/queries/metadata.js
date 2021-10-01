@@ -14,4 +14,5 @@ allMeta {
     }
     bio
     email
+    phone
   }`
