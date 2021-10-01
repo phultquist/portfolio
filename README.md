@@ -1,5 +1,5 @@
 # Portfolio
-This portfolio is made with Next.JS (`./web`) and Sanity `./studio`.
+This portfolio is made with Next.JS (`./web`) and Sanity (`./studio`).
 
 ## Why NextJS?
 I have become comfortable with react and wanted good SEO and speed. I was also impressed with how developer friendly NextJS is. 
