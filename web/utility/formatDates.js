@@ -1,28 +1,29 @@
-export default function formatDates(a, b, toPresent) {
-    a = new Date(a)
-    b = new Date(b)
-    let startDateText = ""
-    let endDateText = ""
+export default function formatDates(a, b) {
+    let startDateText = "";
+    let endDateText = "";
+
     if (b && !a) {
-        [a, b] = [b, a]
+        [a, b] = [b, a];
     } else if (!a && !b) {
-        throw new Error("Neither date is defined.")
+        throw new Error("Neither date is defined.");
     } else if (a > b) {
         [b, a] = [a, b];
     }
 
-    startDateText = formatDate(a);
-    if (!b) {
-        if (toPresent) {
-            endDateText = "present"
-        } else {
-            endDateText = "";
-        }
+    if (a) {
+        startDateText = formatDate(a);
     } else {
-        endDateText = formatDate(b) + (b > new Date() ? " (ancitipated)" : "");
+        startDateText = "Ambiguous beginnings";
     }
 
-    return startDateText + (endDateText ? " - " + endDateText : '');
+    if (b) {
+        let b_date = new Date(b);
+        endDateText = formatDate(b_date) + (b_date > new Date() ? " (anticipated)" : "");
+    } else {
+        endDateText = "Present";
+    }
+
+    return startDateText + " - " + endDateText;
 }
 
 function formatDate(date) {
@@ -41,8 +42,8 @@ function formatDate(date) {
         'September',
         'October',
         'November',
-        'December'
-    ]
+        'December',
+    ];
 
     return months[date.getMonth()] + " " + date.getFullYear();
 }
