@@ -75,5 +75,11 @@ export default {
       type: 'array',
       of: [{ type: 'image' }]
     }
-  ]
+  ],
+  preview: {
+    select: {
+      title: 'title',
+      subtitle: 'company'
+    }
+  }
 }
