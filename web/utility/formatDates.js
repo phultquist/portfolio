@@ -1,6 +1,6 @@
 export default function formatDates(a, b, toPresent) {
-    console.log(a, b);
-    console.log(!b);
+    a = new Date(a)
+    b = new Date(b)
     let startDateText = ""
     let endDateText = ""
     if (b && !a) {
@@ -19,7 +19,7 @@ export default function formatDates(a, b, toPresent) {
             endDateText = "";
         }
     } else {
-        endDateText = formatDate(b);
+        endDateText = formatDate(b) + (b > new Date() ? " (ancitipated)" : "");
     }
 
     return startDateText + (endDateText ? " - " + endDateText : '');

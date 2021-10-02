@@ -1,12 +1,13 @@
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import ResumeItem from '../components/ResumeItem'
+import Card from '../components/Card'
+import memoji from '../public/memoji.png'
 
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
 
 import metadataQuery from '../queries/metadata'
-import formatDates from '../utility/formatDates'
 
 export default function Component({ metadata, resume }) {
     return (
@@ -16,17 +17,27 @@ export default function Component({ metadata, resume }) {
                 <div className={"max-w-screen-lg mx-auto py-10 px-10 space-y-4"}>
                     <div className="w-full flex flex-row justify-between">
                         <h1 className="font-medium text-2xl">Patrick Hultquist</h1>
-                        <div className="flex flex-row space-x-4 text-sm">
-                            <p>
-                                {metadata.email}
-                            </p>
-                            <p>
-                                {metadata.phone}
-                            </p>
-                        </div>
+                        <table className="text-sm">
+                            <tr>
+                                <td className="pr-4">
+                                    {metadata.email}
+                                </td>
+                                <td>
+                                    <a href={metadata.github.url}>{metadata.github.url.split("https://")}</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td className="pr-4">
+                                    {metadata.phone}
+                                </td>
+                                <td>
+                                    <a href={metadata.linkedin.url}>{metadata.linkedin.url.split("https://www.")}</a>
+                                </td>
+                            </tr>
+                        </table>
                     </div>
                     <h2 className="font-medium text-xl">Education</h2>
-                    <div className="flex flex-row">
+                    <Grid>
                         {resume.educations.map((education, i) => {
                             return <ResumeItem
                                 title={education.title}
@@ -35,9 +46,9 @@ export default function Component({ metadata, resume }) {
                                 startDate={education.startDate}
                                 endDate={education.endDate} key={i} />
                         })}
-                    </div>
+                    </Grid>
                     <h2 className="font-medium text-xl">Experiences</h2>
-                    <div className="flex flex-row">
+                    <Grid>
                         {resume.experiences.map((experience, i) => {
                             return <ResumeItem
                                 title={experience.title}
@@ -46,9 +57,9 @@ export default function Component({ metadata, resume }) {
                                 startDate={experience.startDate}
                                 endDate={experience.endDate} key={i} />
                         })}
-                    </div>
+                    </Grid>
                     <h2 className="font-medium text-xl">Projects</h2>
-                    <div className="flex flex-row">
+                    <Grid>
                         {resume.projects.map((project, i) => {
                             return <ResumeItem
                                 title={project.title}
@@ -56,12 +67,16 @@ export default function Component({ metadata, resume }) {
                                 startDate={project.startDate}
                                 endDate={project.endDate} key={i} />
                         })}
-                    </div>
+                    </Grid>
                 </div>
             </div>
             <Footer background="white" metadata={metadata} />
         </div>
     )
+}
+
+function Grid({children}) {
+    return <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2"}>{children}</div>
 }
 
 export async function getStaticProps() {
