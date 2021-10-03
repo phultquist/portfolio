@@ -17,24 +17,12 @@ export default function Component({ metadata, resume }) {
                 <div className={"max-w-screen-lg mx-auto py-10 px-10 space-y-4"}>
                     <div className="w-full flex flex-row justify-between">
                         <h1 className="font-medium text-2xl">Patrick Hultquist</h1>
-                        <table className="text-sm">
-                            <tr>
-                                <td className="pr-4">
-                                    {metadata.email}
-                                </td>
-                                <td>
-                                    <a href={metadata.github.url}>{metadata.github.url.split("https://")}</a>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td className="pr-4">
-                                    {metadata.phone}
-                                </td>
-                                <td>
-                                    <a href={metadata.linkedin.url}>{metadata.linkedin.url.split("https://www.")}</a>
-                                </td>
-                            </tr>
-                        </table>
+                        <div className="text-right text-sm">
+                            <p><a href={`mailto:${metadata.email}`}>{metadata.email}</a></p>
+                            <p><a href={metadata.github.url}>{metadata.github.url.split("https://")}</a></p>
+                            <p>{metadata.phone}</p>
+                            <p><a href={metadata.linkedin.url}>{metadata.linkedin.url.split("https://www.")}</a></p>
+                        </div>
                     </div>
                     <h2 className="font-medium text-xl">Education</h2>
                     <Grid>
@@ -75,7 +63,7 @@ export default function Component({ metadata, resume }) {
     )
 }
 
-function Grid({children}) {
+function Grid({ children }) {
     return <div className={"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2"}>{children}</div>
 }
 
