@@ -1,15 +1,14 @@
 import ResumeItem from './ResumeItem'
 
 export default function Component({ resume, metadata, columns }) {
-    console.log(columns);
     return (<>
-        <div className="w-full flex flex-row justify-between">
-            <h1 className="font-medium text-2xl">Patrick Hultquist</h1>
-            <div className="text-right text-sm">
-                <p><a href={`mailto:${metadata.email}`}>{metadata.email}</a></p>
-                <p><a href={metadata.github.url}>{metadata.github.url.split("https://")}</a></p>
-                <p>{metadata.phone}</p>
-                <p><a href={metadata.linkedin.url}>{metadata.linkedin.url.split("https://www.")}</a></p>
+        <div className="w-full">
+            <h1 className="font-medium mb-2 text-2xl">Patrick Hultquist</h1>
+            <div className="text-sm space-y-1 text-gray-700 md:space-x-4 lg:space-x-4 xl:space-x-4">
+                <p className="md:inline lg:inline xl:inline"><a href={`mailto:${metadata.email}`}>{metadata.email}</a></p>
+                <p className="md:inline lg:inline xl:inline">{metadata.phone}</p>
+                <p className="md:inline lg:inline xl:inline"><a href={metadata.github.url}>{metadata.github.url.split("https://")}</a></p>
+                <p className="md:inline lg:inline xl:inline"><a href={metadata.linkedin.url}>{metadata.linkedin.url.split("https://www.")}</a></p>
             </div>
         </div>
         <h2 className="font-medium text-xl">Education</h2>
@@ -43,6 +42,20 @@ export default function Component({ resume, metadata, columns }) {
                     startDate={project.startDate}
                     endDate={project.endDate} key={i} />
             })}
+        </Grid>
+        <Grid columns={columns}>
+            <div className="skills text-gray-500 pr-6 mb-4">
+                <p className="font-semibold text-sm">Skills</p>
+                <div className="">
+                    {metadata.skills.join(", ")}
+                </div>
+            </div>
+            <div className="technologies text-gray-500">
+                <p className="font-semibold text-sm">Technologies</p>
+                <div className="">
+                    {metadata.technologies.join(", ")}
+                </div>
+            </div>
         </Grid>
     </>)
 }

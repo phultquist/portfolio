@@ -15,4 +15,6 @@ allMeta {
     bio
     email
     phone
+    skills
+    technologies
   }`

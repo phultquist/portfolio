@@ -54,7 +54,6 @@ export async function getStaticProps() {
                   endDate
                   school
               }
-
             }
           }
         `,
