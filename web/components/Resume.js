@@ -1,6 +1,7 @@
 import ResumeItem from './ResumeItem'
 
 export default function Component({ resume, metadata, columns }) {
+    console.log(columns);
     return (<>
         <div className="w-full flex flex-row justify-between">
             <h1 className="font-medium text-2xl">Patrick Hultquist</h1>
@@ -47,5 +48,5 @@ export default function Component({ resume, metadata, columns }) {
 }
 
 function Grid({ children, columns }) {
-    return <div className={`grid grid-cols-${columns?.default || 1} md:grid-cols-${columns?.md || 2} lg:grid-cols-${columns?.lg || 2} xl:grid-cols-${columns?.xl || 2}`}>{children}</div>
+    return <div className={`grid grid-cols-${columns?.default || 1} sm:grid-cols-${columns?.sm || 1}  md:grid-cols-${columns?.md || 2} lg:grid-cols-${columns?.lg || 2} xl:grid-cols-${columns?.xl || 2}`}>{children}</div>
 }

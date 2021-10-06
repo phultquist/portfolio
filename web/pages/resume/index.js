@@ -8,12 +8,19 @@ import client from "../../apollo-client";
 import metadataQuery from '../../queries/metadata'
 
 export default function Component({ metadata, resume }) {
+    const resumeColumns = {
+        default: 1,
+        sm: 1,
+        md: 2,
+        lg: 2,
+        xl: 2
+    }
     return (
         <div>
             <Navbar />
             <div className="bg-gray-200">
                 <div className={"max-w-screen-lg mx-auto py-10 px-10 space-y-4"}>
-                    <Resume resume={resume} metadata={metadata} />
+                    <Resume resume={resume} metadata={metadata} columns={resumeColumns}/>
                 </div>
             </div>
             <Footer background="white" metadata={metadata} />
