@@ -1,4 +1,4 @@
-import formatDates from '../utility/formatDates'
+import formatDates from '../lib/formatDates'
 
 export default function Component({ title, subtitle, secondary, startDate, endDate, description, width }) {
     return (<div className="p-4 pt-2 w-full">

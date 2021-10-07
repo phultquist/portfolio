@@ -11,7 +11,9 @@
   "dependencies": {
     "@apollo/client": "^3.4.13",
     "@sanity/block-content-to-react": "^3.0.0",
+    "fs": "0.0.1-security",
     "graphql": "^15.6.0",
+    "html-pdf": "^3.0.1",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -24,5 +26,8 @@
     "eslint-config-next": "11.1.2",
     "postcss": "^8.3.8",
     "tailwindcss": "^2.2.15"
+  },
+  "browser": {
+    "html-pdf": false
   }
 }
