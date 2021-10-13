@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import Card from "../components/Card"
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer"
@@ -39,18 +40,20 @@ export default function Component({ proudProjects, portfolioProjects, metadata }
                     <div className="flex flex-wrap -mx-3">
                         {portfolioProjects.map((project, i) => (
                             <div key={i} className="my-6 px-6 w-full md:w-1/2 lg:w-1/2 xl:w-1/2">
-                                <a href={'/project/' + project.slug?.current} target="_blank">
-                                    <h3 className="font-medium text-lg">{project.title}</h3>
-                                    <p className="text-sm">
-                                        {project.description}
-                                    </p>
-                                </a>
+                                <Link href={'/project/' + project.slug?.current} >
+                                    <a>
+                                        <h3 className="font-medium text-lg">{project.title}</h3>
+                                        <p className="text-sm">
+                                            {project.description}
+                                        </p>
+                                    </a>
+                                </Link>
                             </div>
                         ))}
                     </div>
                 </div>
             </div>
-            <Footer metadata={metadata}/>
+            <Footer metadata={metadata} />
         </div>
     )
 }
