@@ -5,8 +5,8 @@ export default function Component({ url }) {
             <div className="border-b" style={{ backgroundColor: "#fefefe" }}>
                 <div className="absolute flex flex-row space-x-2 py-4 px-6">
                     {/* add the menu icons */}
-                    {["red-400", "yellow-400", "green-400"].map(color => {
-                        return <div className={`rounded-full bg-${color} w-3 h-3 ring-1 ring-gray-200 ring-opacity-50`}></div>
+                    {["bg-red-400", "bg-yellow-400", "bg-green-400"].map(color => {
+                        return <div className={`rounded-full ${color} w-3 h-3 ring-1 ring-gray-200 ring-opacity-50`}></div>
                     })}
                 </div>
                 <div className="w-full flex justify-center">
