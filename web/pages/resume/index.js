@@ -9,18 +9,18 @@ import metadataQuery from '../../queries/metadata'
 
 export default function Component({ metadata, resume }) {
     const resumeColumns = {
-        default: 1,
-        sm: 1,
-        md: 2,
-        lg: 2,
-        xl: 2
+        default: 'grid-cols-1',
+        sm: 'sm:grid-cols-1',
+        md: 'md:grid-cols-2',
+        lg: 'lg:grid-cols-2',
+        xl: 'xl:grid-cols-2'
     }
     return (
         <div>
             <Navbar />
             <div className="bg-gray-200">
                 <div className={"max-w-screen-lg mx-auto py-10 px-10 space-y-4"}>
-                    <Resume resume={resume} metadata={metadata} columns={resumeColumns}/>
+                    <Resume resume={resume} metadata={metadata}/>
                 </div>
             </div>
             <Footer background="white" metadata={metadata} />

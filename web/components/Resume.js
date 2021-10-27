@@ -1,6 +1,8 @@
 import ResumeItem from './ResumeItem'
 
-export default function Component({ resume, metadata, columns }) {
+export default function Component({ resume, metadata }) {
+    const columns = 'grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2';
+
     return (<>
         <div className="w-full">
             <h1 className="font-medium mb-2 text-2xl">Patrick Hultquist</h1>
@@ -61,5 +63,19 @@ export default function Component({ resume, metadata, columns }) {
 }
 
 function Grid({ children, columns }) {
-    return <div className={`grid grid-cols-${columns?.default || 1} sm:grid-cols-${columns?.sm || 1}  md:grid-cols-${columns?.md || 2} lg:grid-cols-${columns?.lg || 2} xl:grid-cols-${columns?.xl || 2}`}>{children}</div>
+    return <div className={`grid ${columns}`}>{children}</div>
+}
+
+function toGridCols(cols) {
+    // tailwindcss doesn't support string composition with class names, so this helper function must be used
+    switch (cols) {
+        case 1: 
+            return 'grid-cols-1';
+        case 2:
+            return 'grid-cols-2';
+        case 3:
+            return 'grid-cols-3';
+        default:
+            return 'grid-cols-1';
+    }
 }
