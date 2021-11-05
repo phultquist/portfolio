@@ -35,8 +35,8 @@ export default function Component({ project, metadata }) {
                 <div className="flex space-x-10">
                     <h1 className="font-medium text-2xl mb-4">{project.title}</h1>
                     <div className="flex space-x-1">
-                        {project.metadata?.github ? <Icon className="pb-4" glyph={"github"} href={project.metadata.github}/> : null}
-                        {project.metadata?.website ? <Icon className="pb-4" glyph={"web"} href={project.metadata.website} />: null}
+                        {project.metadata?.github ? <Icon className="pb-4" size={30} glyph={"github"} href={project.metadata.github}/> : null}
+                        {project.metadata?.website ? <Icon className="pb-4" size={30} glyph={"web"} href={project.metadata.website} />: null}
                     </div>
                 </div>
                 <div className="flex">

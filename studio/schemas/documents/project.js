@@ -29,11 +29,6 @@ export default {
       type: 'string'
     },
     {
-      name: 'showProjectPage',
-      title: 'Show Project Page',
-      type: 'boolean'
-    },
-    {
       name: 'body',
       title: 'Body',
       type: 'array',
@@ -73,6 +68,12 @@ export default {
       title: 'Images',
       type: 'array',
       of: [{ type: 'image' }]
+    },
+    {
+      name: 'files',
+      title: 'Files',
+      type: 'array',
+      of: [{ type: 'file' }]
     }
   ]
 }
