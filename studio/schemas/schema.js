@@ -8,6 +8,7 @@ import schemaTypes from 'all:part:@sanity/base/schema-type'
 import category from './documents/category'
 import project from './documents/project'
 import education from './documents/education'
+import award from './documents/award'
 import siteSettings from './documents/siteSettings'
 import format from './documents/format'
 import experience from './documents/experience'
@@ -36,6 +37,7 @@ export default createSchema({
     experience,
     project,
     siteSettings,
-    meta
+    meta,
+    award
   ])
 })

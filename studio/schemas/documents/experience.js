@@ -30,6 +30,12 @@ export default {
       validation: Rule => Rule.required().error('A company is required')
     },
     {
+      name: 'bullets',
+      title: 'Bullets',
+      type: 'array',
+      of: [{ type: 'string' }]
+    },
+    {
       name: 'description',
       title: 'Description',
       type: 'string'
