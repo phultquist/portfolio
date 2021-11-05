@@ -36,7 +36,7 @@ export default function Component({ resume, metadata }) {
                     endDate={experience.endDate} key={i} />
             })}
         </Grid>
-        <h2 className="font-medium text-xl">Projects</h2>
+        <h2 className="font-medium text-xl">Selected Projects</h2>
         <Grid columns={columns}>
             {resume.projects.map((project, i) => {
                 return <ResumeItem

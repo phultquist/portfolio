@@ -6,7 +6,7 @@ export default function Component({ title, subtitle, secondary, startDate, endDa
         {secondary ? <h3 className="text-md">{secondary}</h3> : null}
         <p className="font-light text-xs text-gray-500">{formatDates(startDate, endDate)}</p>
         {
-            !bullets ? <p className="text-sm">{description}</p>
+            !bullets ? <p className="text-sm text-gray-800">{description}</p>
                 : (
                     <ul className="list-disc ml-4">
                         {bullets.map((bullet, index) => <li className="text-sm text-gray-800 leading-5 my-1" key={index}>{bullet}</li>)}
