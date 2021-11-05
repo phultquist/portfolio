@@ -6,11 +6,11 @@ export default function Component({ resume, metadata }) {
     return (<>
         <div className="w-full">
             <h1 className="font-medium mb-2 text-2xl">Patrick Hultquist</h1>
-            <div className="text-sm space-y-1 text-gray-700 md:space-x-4 lg:space-x-4 xl:space-x-4">
-                <p className="md:inline lg:inline xl:inline"><a href={`mailto:${metadata.email}`}>{metadata.email}</a></p>
-                <p className="md:inline lg:inline xl:inline">{metadata.phone}</p>
-                <p className="md:inline lg:inline xl:inline"><a href={metadata.github.url}>{metadata.github.url.split("https://")}</a></p>
-                <p className="md:inline lg:inline xl:inline"><a href={metadata.linkedin.url}>{metadata.linkedin.url.split("https://www.")}</a></p>
+            <div className="text-sm space-y-1 text-gray-700 -ml-3">
+                <p className="md:inline lg:inline xl:inline"><a className="p-3" href={`mailto:${metadata.email}`}>{metadata.email}</a></p>
+                <p className="md:inline lg:inline xl:inline"><a className="p-3" href={`tel:${metadata.phone}`}>{metadata.phone}</a></p>
+                <p className="md:inline lg:inline xl:inline"><a className="p-3" href={metadata.github.url}>{metadata.github.url.split("https://")}</a></p>
+                <p className="md:inline lg:inline xl:inline"><a className="p-3" href={metadata.linkedin.url}>{metadata.linkedin.url.split("https://www.")}</a></p>
             </div>
         </div>
         <h2 className="font-medium text-xl">Education</h2>
