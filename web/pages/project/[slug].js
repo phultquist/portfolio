@@ -80,6 +80,7 @@ export async function getServerSideProps({ params }) {
                 endDate
                 metadata {
                     website
+                    github
                 }
                 images {
                     asset {
