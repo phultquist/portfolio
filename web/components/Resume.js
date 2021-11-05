@@ -30,7 +30,8 @@ export default function Component({ resume, metadata }) {
                 return <ResumeItem
                     title={experience.title}
                     secondary={experience.company}
-                    description={experience.description}
+                    // description={experience.description}
+                    bullets={experience.bullets}
                     startDate={experience.startDate}
                     endDate={experience.endDate} key={i} />
             })}
@@ -64,18 +65,4 @@ export default function Component({ resume, metadata }) {
 
 function Grid({ children, columns }) {
     return <div className={`grid ${columns}`}>{children}</div>
-}
-
-function toGridCols(cols) {
-    // tailwindcss doesn't support string composition with class names, so this helper function must be used
-    switch (cols) {
-        case 1: 
-            return 'grid-cols-1';
-        case 2:
-            return 'grid-cols-2';
-        case 3:
-            return 'grid-cols-3';
-        default:
-            return 'grid-cols-1';
-    }
 }
