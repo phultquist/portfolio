@@ -19,7 +19,6 @@ export default function Home({ metadata, proudProjects, portfolioProjects }) {
     <div>
       <div className={styles.intro}>
         <Head>
-          <title>Patrick Hultquist</title>
           <meta name="description" content="About me" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
