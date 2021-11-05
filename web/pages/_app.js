@@ -7,6 +7,7 @@ function MyApp({ Component, pageProps }) {
     <Head>
       <link rel="icon" href="/favicon.ico" />
       <title>Patrick Hultquist</title>
+      <meta name="robots" content="index, follow" />
     </Head>
     <Component {...pageProps} />
   </>
