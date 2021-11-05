@@ -17,7 +17,7 @@ export default function Component({ url }) {
             </div>
             <div className="overflow-hidden rounded-md">
                 <iframe src={url} 
-                    className="w-full h-screen overflow-hidden"
+                    className="w-full h-screen"
                     allow="autoplay"
                     title="Website Preview" >
                 </iframe>
