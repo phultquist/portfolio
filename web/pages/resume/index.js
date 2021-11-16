@@ -8,13 +8,7 @@ import client from "../../apollo-client";
 import metadataQuery from '../../queries/metadata'
 
 export default function Component({ metadata, resume }) {
-    const resumeColumns = {
-        default: 'grid-cols-1',
-        sm: 'sm:grid-cols-1',
-        md: 'md:grid-cols-2',
-        lg: 'lg:grid-cols-2',
-        xl: 'xl:grid-cols-2'
-    }
+
     return (
         <div>
             <Navbar />

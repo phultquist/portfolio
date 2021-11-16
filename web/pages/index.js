@@ -33,6 +33,9 @@ export default function Home({ metadata, proudProjects, portfolioProjects }) {
             {/* <Icon glyph="instagram" size={45} href={metadata.instagram.url} /> */}
             <FloatingIcon glyph="twitter" size={45} href={metadata.twitter.url} />
             <FloatingIcon glyph="email" size={45} href={"mailto:" + metadata.email} />
+            <Link href="/resume">
+              <a href="/resume" className="my-auto cursor-pointer p-2 hover:bg-gray-100 rounded-md transition-all">Resume &rarr;</a>
+            </Link>
           </div>
         </main>
         <div className={"absolute bottom-0 right-0"}>
