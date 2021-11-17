@@ -5,7 +5,7 @@ import {
   MdWallpaper,
   MdAssignmentInd,
   MdSchool,
-  MdStarRate
+  MdStar
 } from 'react-icons/md'
 
 const hiddenDocTypes = listItem =>
@@ -65,7 +65,7 @@ export default () =>
         .title('Awards')
         .schemaType('award')
         .child(S.documentTypeList('award').title('Awards'))
-        .icon(MdStarRate),
+        .icon(MdStar),
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above
