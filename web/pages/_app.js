@@ -1,5 +1,6 @@
 import '../styles/globals.css'
 import Head from 'next/head'
+import NextNProgress from 'nextjs-progressbar'
 // import 'tailwindcss/tailwind.css'
 
 function MyApp({ Component, pageProps }) {
@@ -13,6 +14,11 @@ function MyApp({ Component, pageProps }) {
         heap.load("4089219467");`}
       </script>
     </Head>
+    <NextNProgress 
+      color="#000"
+      startPosition={0.7}
+      stopDelayMs={100}
+    />
     <Component {...pageProps} />
   </>
 }

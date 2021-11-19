@@ -22,7 +22,6 @@ export default function Home({ metadata, proudProjects, portfolioProjects }) {
           <meta name="description" content="About me" />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-
         <main className={styles.main}>
           <h1 className={styles.title}>
             Hello,<br />I'm Patrick
