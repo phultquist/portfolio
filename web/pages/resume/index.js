@@ -17,7 +17,7 @@ export default function Component({ metadata, resume }) {
                     <Resume resume={resume} metadata={metadata}/>
                 </div>
             </div>
-            <Footer background="white" metadata={metadata} />
+            <Footer className="bg-white" metadata={metadata} />
         </div>
     )
 }

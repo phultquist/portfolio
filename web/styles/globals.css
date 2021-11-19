@@ -37,6 +37,10 @@ a {
   transform: scale(1.02);
 }
 
+.darken-hover:hover {
+  filter: brightness(0.7);
+}
+
 .project-content h2 {
   @apply mt-6 mb-2 font-semibold text-xl;
 }

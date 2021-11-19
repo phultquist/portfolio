@@ -90,7 +90,7 @@ export default function Component({ project, metadata }) {
                         setModalShown(true);
                       }}
                       className={
-                        "w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-2 py-2 md:p-6 scale-102 cursor-pointer"
+                        "w-1/2 md:w-1/3 lg:w-1/3 xl:w-1/3 px-2 py-2 md:p-6 bg darken-hover transition-all cursor-pointer"
                       }
                     >
                       <Image
@@ -108,7 +108,7 @@ export default function Component({ project, metadata }) {
           </div>
         </div>
       </div>
-      <Footer background="white" metadata={metadata} />
+      <Footer className="bg-white" metadata={metadata} />
     </>
   );
 }
