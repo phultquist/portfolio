@@ -36,3 +36,23 @@ a {
 .scale-102:hover {
   transform: scale(1.02);
 }
+
+.project-content h2 {
+  @apply mt-6 mb-2 font-semibold text-xl;
+}
+
+.project-content h3 {
+  @apply mt-6 mb-2 font-medium text-lg;
+}
+
+.project-content ol {
+  @apply list-decimal ml-8; 
+}
+
+.project-content a {
+  @apply hover:underline; 
+}
+
+.project-content p {
+  @apply my-3;
+}

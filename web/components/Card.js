@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function Component({ src, children, href }) {
     return (
         <div className="my-6 px-6 w-full md:w-1/2 lg:w-1/2 xl:w-1/2">
-            <div className="bg-white card rounded-xl shadow-lg  scale-102 overflow-hidden hover:shadow-xl transition-all">
+            <div className="bg-white card rounded-xl shadow-md  scale-102 overflow-hidden hover:shadow-lg transition-all">
                 <Link href={href}>
                     <a>
                         <div className="bg-white m-0 p-0 overflow-hidden">
