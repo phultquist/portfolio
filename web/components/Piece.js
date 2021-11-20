@@ -5,7 +5,7 @@ import { VscArrowRight } from "react-icons/vsc";
 export default function Component({ href, header, description, className }) {
   return (
     <div className={`py-4 px-4 w-full md:w-1/2 lg:w-1/2 xl:w-1/2 ${className || "hover:bg-gray-250"} transition-all rounded-lg group`}>
-      <Link href={"/project" + href}>
+      <Link href={href}>
         <a>
           <h3 className="font-medium text-lg">
             {header}{" "}
