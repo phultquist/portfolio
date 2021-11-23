@@ -51,22 +51,11 @@ export default function Component({
             {portfolioProjects.map((project, i) => (
               <Piece
                 key={i}
-                href={"/project/" + project.slug?.current}
+                href={`/project/${project.slug?.current}`}
                 description={project.description}
                 header={project.title}
-                className={"hover:bg-gray-100"}
+                className="hover:bg-gray-100"
               />
-              //   <div
-              //     key={i}
-              //     className="py-6 px-6 transition-all hover:bg-gray-100 rounded-md w-full md:w-1/2 lg:w-1/2 xl:w-1/2"
-              //   >
-              //     <Link href={"/project/" + project.slug?.current}>
-              //       <a>
-              //         <h3 className="font-medium text-lg">{project.title}</h3>
-              //         <p className="text-sm">{project.description}</p>
-              //       </a>
-              //     </Link>
-              //   </div>
             ))}
           </div>
         </div>
