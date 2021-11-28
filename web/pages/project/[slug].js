@@ -2,6 +2,7 @@ import { Navbar, Footer, Icon, Site } from "../../components";
 
 import React from "react";
 import Image from "next/image";
+import Head from "next/head";
 
 import { gql } from "@apollo/client";
 import client from "../../apollo-client";
@@ -15,6 +16,9 @@ export default function Component({ project, metadata }) {
 
   return (
     <>
+    <Head>
+      <title>{project.title}</title>
+    </Head>
       {modalShown ? (
         <div className="modal">
           <div
