@@ -5,11 +5,12 @@ import BlockContent from "@sanity/block-content-to-react";
 import Link from "next/link";
 import Head from "next/head";
 export default function Post({ post }) {
+  console.log(post.private);
   return (
     <div>
       <Head>
         <title>{post.title}</title>
-        {!post.private && (
+        {post.private && (
           <>
             <meta key="robots" name="robots" content="noindex,nofollow" />
             <meta key="googlebot" name="googlebot" content="noindex,nofollow" />
