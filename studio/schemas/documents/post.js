@@ -13,12 +13,6 @@ export default {
       ]
     },
     {
-      name: 'private',
-      title: 'Private',
-      type: 'boolean',
-      initialValue: false
-    },
-    {
       name: 'date',
       title: 'Date',
       type: 'date',
