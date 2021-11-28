@@ -29,7 +29,6 @@ export default function Work({ metadata, posts }) {
           ))}
         </div>
       </div>
-      {/* <div className="max-w-screen-lg mx-auto px-10 py-6 grid grid-cols-1"></div> */}
       <Footer metadata={metadata} className="bg-white" />
     </div>
   );
@@ -40,7 +39,7 @@ export async function getServerSideProps() {
     query: gql`
           query {
             ${metadataQuery}
-            allPost(where:{private:{eq:false}}, sort:{_createdAt: DESC} ) {
+            allPost(sort:{_createdAt: DESC} ) {
               title
               date
               slug {

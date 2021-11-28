@@ -6,7 +6,7 @@ export default {
     //     templateRepoId: 'sanity-io/sanity-template-gatsby-portfolio'
     //   }
     // },
-    {name: 'structure-menu'},
+    // {name: 'structure-menu'},
     {
       name: 'project-info',
       options: {

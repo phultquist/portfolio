@@ -3,6 +3,25 @@
   "project": {
     "name": "Portfolio"
   },
+  "__experimental_spaces": [
+    {
+      "name": "production",
+      "title": "Production",
+      "default": true,
+      "api": {
+        "projectId": "sivcrl3y",
+        "dataset": "production"
+      }
+    },
+    {
+      "name": "production-private",
+      "title": "Private",
+      "api": {
+        "projectId": "sivcrl3y",
+        "dataset": "production-private"
+      }
+    }
+  ],
   "api": {
     "projectId": "sivcrl3y",
     "dataset": "production"

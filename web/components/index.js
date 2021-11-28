@@ -5,4 +5,5 @@ export { default as Navbar } from "./Navbar";
 export { default as Piece } from "./Piece";
 export { default as Resume } from "./Resume";
 export { default as ResumeItem } from "./ResumeItem";
+export { default as Post } from "./Post";
 export { default as Site } from "./Site";
