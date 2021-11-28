@@ -1,11 +1,11 @@
 export default {
   widgets: [
-    {
-      name: 'sanity-tutorials',
-      options: {
-        templateRepoId: 'sanity-io/sanity-template-gatsby-portfolio'
-      }
-    },
+    // {
+    //   name: 'sanity-tutorials',
+    //   options: {
+    //     templateRepoId: 'sanity-io/sanity-template-gatsby-portfolio'
+    //   }
+    // },
     {name: 'structure-menu'},
     {
       name: 'project-info',
@@ -22,12 +22,6 @@ export default {
                   title: 'Sanity Studio',
                   name: 'sanity-portfolio-studio-go2wrfd4',
                   apiId: 'c3361bcf-b1ec-46cb-8692-cc3fcbb24fb9'
-                },
-                {
-                  buildHookId: '614a238a3fdc8800cc0ebb16',
-                  title: 'Portfolio Website',
-                  name: 'sanity-portfolio-web-iahjmj54',
-                  apiId: 'f7d107b5-e56e-4f1a-b3be-d0a1714a48df'
                 }
               ]
             }
@@ -36,12 +30,12 @@ export default {
         data: [
           {
             title: 'GitHub repo',
-            value: 'https://github.com/phultquist/sanity-portfolio',
+            value: 'https://github.com/phultquist/portfolio',
             category: 'Code'
           },
           {
             title: 'Frontend',
-            value: 'https://sanity-portfolio-web-iahjmj54.netlify.app',
+            value: 'https://patrick.today',
             category: 'apps'
           }
         ]
