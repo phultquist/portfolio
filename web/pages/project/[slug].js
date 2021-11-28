@@ -114,7 +114,30 @@ export default function Component({ project, metadata }) {
   );
 }
 
-export async function getServerSideProps({ params }) {
+export async function getStaticPaths() {
+  const { data } = await client.query({
+    query: gql`
+      query {
+        allProject {
+          slug {
+            current
+          }
+        }
+      }
+    `,
+  });
+
+  return {
+    paths: data.allProject.map((format) => ({
+      params: {
+        slug: format.slug.current,
+      },
+    })),
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
   const { data } = await client.query({
     query: gql`
         query {
