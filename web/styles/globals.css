@@ -56,7 +56,9 @@ h1.section, h2.section {
   @apply my-3;
 }
 
-
+.project-content blockquote {
+  @apply border-l-4 border-gray-300 pl-4 text-gray-700;
+}
 
 .post-content strong {
   @apply font-semibold;
