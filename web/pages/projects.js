@@ -1,8 +1,5 @@
 import Link from "next/link";
-import Card from "../components/Card";
-import Piece from "../components/Piece";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import { Card, Piece, Navbar, Footer } from "../components";
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
 import { VscArrowRight } from "react-icons/vsc";
@@ -18,8 +15,8 @@ export default function Component({
     <div>
       <Navbar />
       <div className="bg-gray-200">
-        <div className={"max-w-screen-lg mx-auto py-10 px-10"}>
-          <h1 className={"text-2xl mb-4 font-medium"}>Featured Projects</h1>
+        <div className="max-w-screen-lg mx-auto p-10">
+          <h1 className="section">Featured Projects</h1>
           <div className="flex flex-wrap -mx-3">
             {proudProjects.map((project, i) => {
               const image = project.images
@@ -34,7 +31,7 @@ export default function Component({
                   >
                     <h3 className="font-medium text-lg">
                       {project.title}{" "}
-                      <VscArrowRight className="inline opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all mb-1" />
+                      <VscArrowRight className="group-hover-arrow" />
                     </h3>
                     <p className="text-sm">{project.description}</p>
                   </Card>
@@ -45,8 +42,8 @@ export default function Component({
         </div>
       </div>
       <div>
-        <div className={"max-w-screen-lg mx-auto py-10 px-10"}>
-          <h1 className={"text-2xl mb-4 font-medium"}>Other Projects</h1>
+        <div className="max-w-screen-lg mx-auto p-10">
+          <h1 className="section">Other Projects</h1>
           <div className="flex flex-wrap -mx-3">
             {portfolioProjects.map((project, i) => (
               <Piece

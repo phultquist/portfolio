@@ -9,7 +9,7 @@ export default {
       type: 'string',
       validation: Rule => [
         Rule.required().error('A title is required'),
-        Rule.max(120).warning('A title shouldn\'t be more than 120 characters.')
+        Rule.max(120).warning("A title shouldn't be more than 120 characters.")
       ]
     },
     {
@@ -76,4 +76,4 @@ export default {
       of: [{ type: 'file' }]
     }
   ]
-}
+};

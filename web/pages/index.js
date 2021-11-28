@@ -1,14 +1,14 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "../styles/Home.module.css";
-import FloatingIcon from "../components/Icon";
 import { VscArrowRight } from "react-icons/vsc";
-import Card from "../components/Card";
-import Piece from "../components/Piece";
-import Navbar from "../components/Navbar";
-
-import Footer from "../components/Footer";
+import {
+  Card,
+  Piece,
+  Navbar,
+  Footer,
+  Icon as FloatingIcon,
+} from "../components";
 
 import { gql } from "@apollo/client";
 import client from "../apollo-client";
@@ -24,10 +24,10 @@ export default function Home({ metadata, proudProjects, portfolioProjects }) {
       </Head>
       <Navbar />
       <div className="flex flex-col align-middle h-96 container mx-auto max-w-screen-lg px-10">
-        <main className={styles.main}>
+        <main className="flex flex-1 flex-col justify-center items-left">
           <h1 className="text-5xl mb-4">Hello, I'm Patrick</h1>
 
-          <div className={'flex flex-row'}>
+          <div className={"flex flex-row"}>
             <FloatingIcon glyph="github" size={45} href={metadata.github.url} />
             <FloatingIcon
               glyph="twitter"
@@ -52,7 +52,7 @@ export default function Home({ metadata, proudProjects, portfolioProjects }) {
       </div>
       <div className="bg-gray-200">
         <div className={"max-w-screen-lg mx-auto py-10 px-10"}>
-          <h2 className={"text-2xl mb-4 font-medium"}>Work I'm proud of</h2>
+          <h2 className="section">Work I'm proud of</h2>
           <div className="flex flex-wrap -mx-3">
             {proudProjects.map((project, i) => {
               const image = project.images ? project.images[0].asset.url : "";
@@ -64,7 +64,7 @@ export default function Home({ metadata, proudProjects, portfolioProjects }) {
                 >
                   <h3 className="font-medium text-lg">
                     {project.title}{" "}
-                    <VscArrowRight className="inline opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all mb-1" />
+                    <VscArrowRight className="group-hover-arrow" />
                   </h3>
                   <p className="text-sm">{project.description}</p>
                 </Card>
@@ -75,14 +75,14 @@ export default function Home({ metadata, proudProjects, portfolioProjects }) {
       </div>
       <div>
         <div className={"max-w-screen-lg mx-auto py-10 px-10"}>
-          <h2 className={"text-2xl mb-4 font-medium"}>About me</h2>
+          <h2 className="section">About me</h2>
           <p>{metadata.bio}</p>
         </div>
         {/* *images of me* */}
       </div>
       <div className="bg-gray-200">
         <div className={"max-w-screen-lg mx-auto py-10 px-10"}>
-          <h2 className={"text-2xl mb-4 font-medium"}>Other highlights</h2>
+          <h2 className="section">Other highlights</h2>
           <div className="flex flex-wrap -mx-3">
             {portfolioProjects.map((project, i) => (
               <Piece

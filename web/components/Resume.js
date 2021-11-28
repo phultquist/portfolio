@@ -7,7 +7,7 @@ export default function Component({ resume, metadata }) {
   return (
     <>
       <div className="w-full">
-        <h1 className="font-medium mb-2 text-2xl">Patrick Hultquist</h1>
+        <h1 className="section">Patrick Hultquist</h1>
         <div className="text-sm space-y-1 text-gray-700 -ml-3">
           <p className="md:inline lg:inline xl:inline">
             <a className="p-3" href={`mailto:${metadata.email}`}>

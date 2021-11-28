@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400&display=swap&text=↑→↓←");
 
 * {
   font-family: 'Inter', sans-serif;
@@ -21,20 +20,16 @@ a {
   text-decoration: none;
 }
 
+h1.section, h2.section {
+  @apply text-2xl mb-4 font-medium;
+}
+
+.group-hover-arrow {
+  @apply inline opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all mb-1;
+}
+
 * {
   box-sizing: border-box;
-}
-
-.scale-110, .scale-110:hover, .scale-102, .scale-102:hover {
-  transition: all 0.2s ease-in-out;
-}
-
-.scale-110:hover {
-  transform: scale(1.1);
-}
-
-.scale-102:hover {
-  transform: scale(1.02);
 }
 
 .darken-hover:hover {
@@ -59,4 +54,54 @@ a {
 
 .project-content p {
   @apply my-3;
+}
+
+
+
+.post-content strong {
+  @apply font-semibold;
+}
+
+.post-content p {
+  @apply my-3;
+}
+
+.post-content h1 {
+  @apply mt-8 mb-4 font-semibold text-2xl;
+}
+
+.post-content h2 {
+  @apply mt-8 mb-2 font-semibold text-xl;
+}
+
+.post-content h3 {
+  @apply mt-8 mb-2 font-semibold text-lg;
+}
+
+.post-content h4 {
+  @apply mt-8 mb-2 font-semibold;
+}
+
+.post-content blockquote {
+  @apply border-l-4 border-gray-200 pl-4 text-gray-700;
+}
+
+.post-content code {
+  @apply bg-gray-100 py-1 px-3 rounded-lg;
+}
+
+.post-content ol {
+  @apply list-decimal ml-8 my-4; 
+}
+
+.post-content ul {
+  @apply list-disc ml-8 my-4; 
+}
+
+.post-content li {
+  @apply my-2;
+}
+
+.post-content a {
+  @apply underline;
 }

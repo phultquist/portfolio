@@ -1,12 +1,13 @@
-import S from '@sanity/desk-tool/structure-builder'
+import S from '@sanity/desk-tool/structure-builder';
 import {
   MdSettings,
   MdLightbulbOutline,
   MdWallpaper,
   MdAssignmentInd,
   MdSchool,
-  MdStar
-} from 'react-icons/md'
+  MdStar,
+  MdPages
+} from 'react-icons/md';
 
 const hiddenDocTypes = listItem =>
   ![
@@ -17,8 +18,9 @@ const hiddenDocTypes = listItem =>
     'project',
     'experience',
     'education',
-    'award'
-  ].includes(listItem.getId())
+    'award',
+    'post'
+  ].includes(listItem.getId());
 
 export default () =>
   S.list()
@@ -66,9 +68,14 @@ export default () =>
         .schemaType('award')
         .child(S.documentTypeList('award').title('Awards'))
         .icon(MdStar),
+      S.listItem()
+        .title('Posts')
+        .schemaType('post')
+        .child(S.documentTypeList('post').title('Posts'))
+        .icon(MdPages),
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above
       ...S.documentTypeListItems().filter(hiddenDocTypes)
       // ...S.objectTypeListItems()
-    ])
+    ]);

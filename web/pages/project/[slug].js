@@ -1,7 +1,4 @@
-import Navbar from "../../components/Navbar";
-import Footer from "../../components/Footer";
-import Icon from "../../components/Icon";
-import Site from "../../components/Site";
+import { Navbar, Footer, Icon, Site } from "../../components";
 
 import React from "react";
 import Image from "next/image";
@@ -45,7 +42,7 @@ export default function Component({ project, metadata }) {
       <div className="bg-gray-200">
         <div className="max-w-screen-lg mx-auto py-10 px-10">
           <div className="flex space-x-10">
-            <h1 className="font-medium text-2xl mb-4">{project.title}</h1>
+            <h1 className="section">{project.title}</h1>
             <div className="flex space-x-1">
               {project.metadata?.github ? (
                 <Icon

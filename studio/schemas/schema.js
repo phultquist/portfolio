@@ -13,6 +13,7 @@ import siteSettings from './documents/siteSettings'
 import format from './documents/format'
 import experience from './documents/experience'
 import meta from './documents/meta'
+import post from './documents/post'
 
 // Object types
 import metadata from './objects/metadata'
@@ -38,6 +39,7 @@ export default createSchema({
     project,
     siteSettings,
     meta,
+    post,
     award
   ])
 })
