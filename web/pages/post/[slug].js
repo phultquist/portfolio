@@ -9,6 +9,12 @@ export default function Post({ post }) {
     <div>
       <Head>
         <title>{post.title}</title>
+        {!post.private && (
+          <>
+            <meta key="robots" name="robots" content="noindex,nofollow" />
+            <meta key="googlebot" name="googlebot" content="noindex,nofollow" />
+          </>
+        )}
       </Head>
       <div className="container max-w-screen-lg mx-auto p-10">
         <h1 className="section !mb-3 !text-3xl">{post.title}</h1>
@@ -36,10 +42,11 @@ export async function getServerSideProps({ params }) {
   const { data } = await client.query({
     query: gql`
           query {
-              allPost(where: { slug: { current: { eq: "${params.slug}" } } }, sort:{_createdAt: DESC} ) {
+              allPost(where: { slug: { current: { eq: "${params.slug}" } } }) {
                   title
                   bodyRaw
                   date
+                  private
                   images {
                       asset {
                           url

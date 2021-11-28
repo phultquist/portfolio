@@ -14,7 +14,7 @@ export default function Work({ metadata, posts }) {
         <div className="max-w-screen-lg mx-auto p-10">
           <h1 className="section">My Notebook</h1>
           {posts.map((post) => (
-            <Link key={post.slug.current} href={'/post/' + post.slug.current}>
+            <Link key={post.slug.current} href={"/post/" + post.slug.current}>
               <div className="w-full p-3 group cursor-pointer rounded-md hover:bg-gray-250 transition-all">
                 <div className="w-full flex flex-row justify-between items-center">
                   <h2 className="text-lg font-medium">
@@ -40,7 +40,7 @@ export async function getServerSideProps() {
     query: gql`
           query {
             ${metadataQuery}
-            allPost(where:{private:{eq:false}}) {
+            allPost(where:{private:{eq:false}}, sort:{_createdAt: DESC} ) {
               title
               date
               slug {
