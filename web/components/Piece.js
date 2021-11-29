@@ -10,7 +10,7 @@ export default function Component({ href, header, description, className }) {
           className || "hover:bg-gray-250"
         } transition-all rounded-lg group cursor-pointer`}
       >
-        <a>
+        <a href={href}>
           <h3 className="font-medium text-lg">
             {header}{" "}
             <VscArrowRight className="group-hover-arrow" />
