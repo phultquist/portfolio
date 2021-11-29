@@ -8,7 +8,16 @@ export default function PostPage({ post }) {
         <meta key="robots" name="robots" content="noindex,nofollow" />
         <meta key="googlebot" name="googlebot" content="noindex,nofollow" />
       </Head>
-      <Post post={post} />
+      {post.error ? (
+        <div className="w-screen h-screen bg-gray-100 flex justify-center items-center">
+          <p className="font-medium text-gray-500 text-center">
+            {post.message} <br/><br/>
+            <a href="/" className="text-sm font-normal">Go Home</a>
+          </p>
+        </div>
+      ) : (
+        <Post post={post} />
+      )}
     </>
   );
 }

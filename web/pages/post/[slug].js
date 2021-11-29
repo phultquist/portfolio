@@ -37,17 +37,6 @@ export async function getStaticProps({ params }) {
                   title
                   bodyRaw
                   date
-                  images {
-                      asset {
-                          url
-                          metadata {
-                              dimensions {
-                                  width
-                                  height
-                              }
-                          }
-                      }
-                  }
               }
           }
           `,

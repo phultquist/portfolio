@@ -18,6 +18,7 @@ export default async function handler(req, res) {
               title
               date
               bodyRaw
+              expiration
           }
       }`,
     variables: {},
@@ -29,8 +30,24 @@ export default async function handler(req, res) {
     redirect: "follow",
   };
 
-  const response = await fetch(process.env.PRIVATE_DATABASE_URL, requestOptions)
-  const json = await response.json();
+  const response = await fetch(
+    process.env.PRIVATE_DATABASE_URL,
+    requestOptions
+  );
+  let json = await response.json();
 
-  res.status(200).json(json);
+  if (json.data.allPost[0].expiration && new Date(json.data.allPost[0].expiration) < Date.now()) {
+    res.status(404).json({
+      data: {
+        allPost: [
+          {
+            message: "This post has expired, and is no longer accessible.",
+            error: true
+          },
+        ],
+      },
+    });
+  } else {
+    res.status(200).json(json);
+  }
 }

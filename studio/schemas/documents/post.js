@@ -44,10 +44,10 @@ export default {
       }
     },
     {
-      name: 'images',
-      title: 'Images',
-      type: 'array',
-      of: [{ type: 'image' }]
+      name: 'expiration',
+      title: 'Expiration',
+      type: 'datetime',
+      description: 'The date and time when this post will be unpublished. Enabled only for private posts.'
     }
   ]
 };
