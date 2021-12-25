@@ -43,7 +43,7 @@ export default function Component({ project, metadata }) {
         </div>
       ) : null}
       <Navbar />
-      <div className="bg-gray-200" >
+      <div className="bg-gray-200">
         <div className="max-w-screen-lg mx-auto py-10 px-10">
           <div className="flex space-x-10">
             <h1 className="section">{project.title}</h1>
@@ -75,11 +75,6 @@ export default function Component({ project, metadata }) {
               )}
             </div>
           </div>
-          <div className="mt-10">
-            {project.metadata?.website ? (
-              <Site url={project.metadata.website} />
-            ) : null}
-          </div>
           <div className="flex flex-wrap justify-between">
             {project.images?.length > 1
               ? project.images.map((image) => {
@@ -106,6 +101,11 @@ export default function Component({ project, metadata }) {
                   );
                 })
               : null}
+          </div>
+          <div className="mt-10">
+            {project.metadata?.website ? (
+              <Site url={project.metadata.website} />
+            ) : null}
           </div>
         </div>
       </div>
