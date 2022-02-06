@@ -74,9 +74,14 @@ export default function Home({ metadata, proudProjects, portfolioProjects }) {
         </div>
       </div>
       <div>
-        <div className={"max-w-screen-lg mx-auto py-10 px-10"}>
-          <h2 className="section">About me</h2>
-          <p>{metadata.bio}</p>
+        <div className="max-w-screen-lg mx-auto py-10 px-10 flex">
+          <div>
+            <h2 className="section">About me</h2>
+            <p>{metadata.bio}</p>
+          </div>
+          <div className="w-40 h-40 mx-10 relative flex-none rounded-2xl overflow-hidden">
+            <Image src="/image.jpg" layout="fill" className="object-cover" />
+          </div>
         </div>
         {/* *images of me* */}
       </div>

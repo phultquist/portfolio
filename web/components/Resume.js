@@ -4,9 +4,11 @@ export default function Component({ resume, metadata }) {
   const columns =
     "grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2";
 
+  const currentExperience = resume.experiences[0];
+
   return (
     <>
-      <div className="w-full">
+      <div className="w-full mb-10">
         <h1 className="section">Patrick Hultquist</h1>
         <div className="text-sm space-y-1 text-gray-700 -ml-3">
           <p className="md:inline lg:inline xl:inline">
@@ -31,38 +33,59 @@ export default function Component({ resume, metadata }) {
           </p>
         </div>
       </div>
-      <h2 className="font-medium text-xl">Education</h2>
-      <Grid columns={columns}>
-        {resume.educations.map((education, i) => {
-          return (
-            <ResumeItem
-              title={education.title}
-              secondary={education.school}
-              description={education.description}
-              startDate={education.startDate}
-              endDate={education.endDate}
-              key={i}
-            />
-          );
-        })}
-      </Grid>
+      {resume.educations && (
+        <>
+          <h2 className="font-medium text-xl">Education</h2>
+          <Grid columns={columns}>
+            {resume.educations.map((education, i) => {
+              return (
+                <ResumeItem
+                  title={education.title}
+                  secondary={education.school}
+                  description={education.description}
+                  startDate={education.startDate}
+                  endDate={education.endDate}
+                  key={i}
+                />
+              );
+            })}
+          </Grid>
+        </>
+      )}
       <h2 className="font-medium text-xl">Experiences</h2>
+
+      {currentExperience && (
+        <div className="rounded-md border-gray-300 pt-2 border-2 ">
+          <ResumeItem
+            title={currentExperience.title}
+            secondary={currentExperience.company}
+            description={currentExperience.description}
+            startDate={currentExperience.startDate}
+            endDate={currentExperience.endDate}
+          />
+        </div>
+      )}
       <Grid columns={columns}>
-        {resume.experiences.map((experience, i) => {
-          return (
-            <ResumeItem
-              title={experience.title}
-              secondary={experience.company}
-              // description={experience.description}
-              bullets={experience.bullets}
-              startDate={experience.startDate}
-              endDate={experience.endDate}
-              key={i}
-            />
-          );
-        })}
+        {resume.experiences
+          .filter(
+            (experience) =>
+              experience.slug.current !== currentExperience?.slug?.current
+          )
+          .map((experience, i) => {
+            return (
+              <ResumeItem
+                title={experience.title}
+                secondary={experience.company}
+                bullets={experience.bullets}
+                startDate={experience.startDate}
+                endDate={experience.endDate}
+                key={i}
+              />
+            );
+          })}
       </Grid>
       <h2 className="font-medium text-xl">Selected Projects</h2>
+
       <Grid columns={columns}>
         {resume.projects.map((project, i) => {
           return (

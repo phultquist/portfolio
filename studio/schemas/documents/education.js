@@ -9,14 +9,13 @@ export default {
       type: 'string',
       validation: Rule => [
         Rule.required().error('A title is required'),
-        Rule.max(120).warning('A title shouldn\'t be more than 120 characters.')
+        Rule.max(120).warning("A title shouldn't be more than 120 characters.")
       ]
     },
     {
       name: 'startDate',
       title: 'Started on',
-      type: 'date',
-      validation: Rule => Rule.required()
+      type: 'date'
     },
     {
       name: 'endDate',
@@ -52,4 +51,4 @@ export default {
       of: [{ type: 'image' }]
     }
   ]
-}
+};
