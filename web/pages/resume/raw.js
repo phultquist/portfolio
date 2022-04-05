@@ -22,7 +22,8 @@ export async function getStaticProps() {
               title
               experiences {
                   title
-                  description
+                  # description
+                  bullets
                   startDate
                   endDate
                   company
@@ -42,7 +43,6 @@ export async function getStaticProps() {
                   endDate
                   school
               }
-
             }
           }
         `,
