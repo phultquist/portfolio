@@ -39,14 +39,14 @@ export default function Home({ metadata, proudProjects, portfolioProjects }) {
               size={45}
               href={"mailto:" + metadata.email}
             />
-            <Link href="/resume">
+            {/* <Link href="/resume">
               <a
                 href="/resume"
                 className="my-auto cursor-pointer p-2 hover:bg-gray-100 rounded-md transition-all"
               >
                 Resume <VscArrowRight className="mb-1 inline" />
               </a>
-            </Link>
+            </Link> */}
           </div>
         </main>
       </div>
