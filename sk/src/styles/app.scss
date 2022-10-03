@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.nav-item {
+	@apply hover:bg-gray-100 py-2 rounded-md px-4 transition-all;
+}
