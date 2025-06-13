@@ -37,7 +37,7 @@ export default function Home({ metadata, proudProjects, portfolioProjects }) {
             <FloatingIcon
               glyph="email"
               size={45}
-              href={"mailto:" + metadata.email}
+              href={"mailto:hi@patrick.app"}
             />
             {/* <Link href="/resume">
               <a

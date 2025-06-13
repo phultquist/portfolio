@@ -27,7 +27,7 @@ export default function Component({ className, metadata, linkClassName }) {
               text: "Twitter",
             },
             {
-              link: "mailto:" + metadata.email,
+              link: "mailto:hi@patrick.app",
               text: "Email",
             },
           ].map((ref, index) => (
